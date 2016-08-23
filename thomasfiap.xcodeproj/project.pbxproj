@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC4DB5B71D65280000FBC4A2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4DB5B61D65280000FBC4A2 /* LoginViewController.swift */; };
-		AC4DB5BA1D6528E200FBC4A2 /* bora-jogar.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4DB5B91D6528E200FBC4A2 /* bora-jogar.png */; };
 		AC4DB5C01D6541E900FBC4A2 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4DB5BF1D6541E900FBC4A2 /* CadastroViewController.swift */; };
-		AC4DB5C21D6542CC00FBC4A2 /* Champions-League-8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AC4DB5C11D6542CC00FBC4A2 /* Champions-League-8.jpg */; };
 		AC4DB5C41D65475D00FBC4A2 /* background.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4DB5C31D65475D00FBC4A2 /* background.swift */; };
 		AC4DB5CA1D6548C800FBC4A2 /* navigationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4DB5C91D6548C800FBC4A2 /* navigationImage.swift */; };
 		AC72EC001D62881100A657A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72EBFF1D62881100A657A5 /* AppDelegate.swift */; };
@@ -19,6 +17,8 @@
 		AC72EC0A1D62881100A657A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC72EC081D62881100A657A5 /* LaunchScreen.storyboard */; };
 		AC72EC151D62881100A657A5 /* thomasfiapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72EC141D62881100A657A5 /* thomasfiapTests.swift */; };
 		AC72EC201D62881100A657A5 /* thomasfiapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72EC1F1D62881100A657A5 /* thomasfiapUITests.swift */; };
+		ACE2CD051D6BDDBB00182658 /* bora-jogar.png in Resources */ = {isa = PBXBuildFile; fileRef = ACE2CD031D6BDDBB00182658 /* bora-jogar.png */; };
+		ACE2CD061D6BDDBB00182658 /* Champions-League-8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACE2CD041D6BDDBB00182658 /* Champions-League-8.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +40,7 @@
 
 /* Begin PBXFileReference section */
 		AC4DB5B61D65280000FBC4A2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		AC4DB5B91D6528E200FBC4A2 /* bora-jogar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bora-jogar.png"; path = "../../../Downloads/Bora Jogar/bora-jogar.png"; sourceTree = "<group>"; };
 		AC4DB5BF1D6541E900FBC4A2 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
-		AC4DB5C11D6542CC00FBC4A2 /* Champions-League-8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Champions-League-8.jpg"; path = "../../../Downloads/Champions-League-8.jpg"; sourceTree = "<group>"; };
 		AC4DB5C31D65475D00FBC4A2 /* background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = background.swift; sourceTree = "<group>"; };
 		AC4DB5C91D6548C800FBC4A2 /* navigationImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = navigationImage.swift; sourceTree = "<group>"; };
 		AC72EBFC1D62881100A657A5 /* thomasfiap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thomasfiap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +55,8 @@
 		AC72EC1B1D62881100A657A5 /* thomasfiapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = thomasfiapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC72EC1F1D62881100A657A5 /* thomasfiapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thomasfiapUITests.swift; sourceTree = "<group>"; };
 		AC72EC211D62881100A657A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACE2CD031D6BDDBB00182658 /* bora-jogar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bora-jogar.png"; sourceTree = "<group>"; };
+		ACE2CD041D6BDDBB00182658 /* Champions-League-8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Champions-League-8.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +87,8 @@
 		AC4DB5B81D65284100FBC4A2 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				AC4DB5C11D6542CC00FBC4A2 /* Champions-League-8.jpg */,
-				AC4DB5B91D6528E200FBC4A2 /* bora-jogar.png */,
+				ACE2CD031D6BDDBB00182658 /* bora-jogar.png */,
+				ACE2CD041D6BDDBB00182658 /* Champions-League-8.jpg */,
 			);
 			name = Image;
 			sourceTree = "<group>";
@@ -253,10 +253,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC72EC0A1D62881100A657A5 /* LaunchScreen.storyboard in Resources */,
-				AC4DB5BA1D6528E200FBC4A2 /* bora-jogar.png in Resources */,
+				ACE2CD051D6BDDBB00182658 /* bora-jogar.png in Resources */,
 				AC72EC071D62881100A657A5 /* Assets.xcassets in Resources */,
 				AC72EC051D62881100A657A5 /* Main.storyboard in Resources */,
-				AC4DB5C21D6542CC00FBC4A2 /* Champions-League-8.jpg in Resources */,
+				ACE2CD061D6BDDBB00182658 /* Champions-League-8.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
