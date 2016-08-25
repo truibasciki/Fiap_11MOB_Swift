@@ -26,6 +26,8 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var txtSenha: UITextField!
 
     @IBAction func logar(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("LoginMapaSegue", sender: self)
     }
     
     

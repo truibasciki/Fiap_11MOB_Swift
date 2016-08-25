@@ -18,10 +18,12 @@ extension UIView {
         imageViewBackground.image = UIImage(named: "Champions-League-8.jpg")
         // you can change the content mode:
         imageViewBackground.contentMode = UIViewContentMode.ScaleAspectFill
+        imageViewBackground.alpha = 0.4
+        
         
         self.addSubview(imageViewBackground)
         self.sendSubviewToBack(imageViewBackground)
         
-        self.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        self.backgroundColor = UIColor(white: 1, alpha: 1)
     }
 }

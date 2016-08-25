@@ -96,11 +96,53 @@
                     <connections>
                         <outlet property="txtLogin" destination="L5U-8S-nyn" id="1dt-Jy-f1b"/>
                         <outlet property="txtSenha" destination="bSr-EF-lqk" id="pNu-Yd-1Gn"/>
+                        <segue destination="ED8-9k-GN2" kind="show" identifier="LoginMapaSegue" id="fK0-st-eqj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="287" y="442"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Bk1-Zu-oig">
+            <objects>
+                <viewController id="ED8-9k-GN2" customClass="MapViewController" customModule="thomasfiap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4aH-48-Amg"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Ew-0J-HoC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vwe-zd-0TU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9z-Pf-yde">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="nEc-3P-Mzx"/>
+                                </items>
+                            </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NtX-EY-8RW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="c9z-Pf-yde" secondAttribute="trailing" id="56Z-bA-dN4"/>
+                            <constraint firstItem="c9z-Pf-yde" firstAttribute="leading" secondItem="Vwe-zd-0TU" secondAttribute="leading" id="FgA-ox-s0c"/>
+                            <constraint firstAttribute="trailing" secondItem="NtX-EY-8RW" secondAttribute="trailing" id="HCd-6S-kQj"/>
+                            <constraint firstItem="c9z-Pf-yde" firstAttribute="top" secondItem="NtX-EY-8RW" secondAttribute="bottom" id="IaT-Mk-V3i"/>
+                            <constraint firstItem="NtX-EY-8RW" firstAttribute="leading" secondItem="Vwe-zd-0TU" secondAttribute="leading" id="ZOc-YQ-WKT"/>
+                            <constraint firstItem="NtX-EY-8RW" firstAttribute="top" secondItem="Vwe-zd-0TU" secondAttribute="top" id="kmy-oe-rMJ"/>
+                            <constraint firstAttribute="bottom" secondItem="c9z-Pf-yde" secondAttribute="bottom" id="vT0-A5-gAH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="NtX-EY-8RW" id="OYd-Ff-iGN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9uO-gZ-nIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1019" y="442"/>
         </scene>
         <!--Cadastro View Controller-->
         <scene sceneID="kIU-fq-7or">
@@ -215,6 +257,7 @@
                         <outlet property="txtEmail" destination="tRZ-fr-LJi" id="5yf-la-HsM"/>
                         <outlet property="txtLogin" destination="Gek-eZ-La4" id="7HQ-LS-uta"/>
                         <outlet property="txtSenha" destination="TO5-eJ-6DQ" id="Yd4-NA-gMO"/>
+                        <segue destination="ED8-9k-GN2" kind="show" identifier="CadastroMapaSegue" id="NyJ-lh-roT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2lu-c5-N9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,4 +265,7 @@
             <point key="canvasLocation" x="287" y="1189"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NyJ-lh-roT"/>
+    </inferredMetricsTieBreakers>
 </document>
