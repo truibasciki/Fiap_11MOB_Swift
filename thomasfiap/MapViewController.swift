@@ -11,11 +11,11 @@ import MapKit
 import CoreLocation
 
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     
+    @IBOutlet weak var map: MKMapView!
     
-    @IBOutlet weak var mapView: MKMapView!
     
     var locationManager: CLLocationManager!
     
@@ -47,6 +47,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startMonitoringSignificantLocationChanges()
         
         
+        map.delegate = self;
+        
         
     }
 
@@ -67,7 +69,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let coordinationToMap = MKCoordinateRegionMakeWithDistance(locInicial.coordinate, raio * scale , raio * scale)
         
         //configura o mapa
-        mapView.setRegion(coordinationToMap, animated: true)
+        map.setRegion(coordinationToMap, animated: true)
         
     }
 
@@ -81,17 +83,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let distanceInMeters = self.userLocation.distanceFromLocation(location1)
         
         
-        let anotation = MKPointAnnotation()
-        anotation.coordinate = location
-        anotation.title = "Meu ponto"
-        anotation.subtitle = "Teste do map view! \(distanceInMeters)"
-        mapView.addAnnotation(anotation)
+//        let anotation = MKPointAnnotation()
+//        anotation.coordinate = location
+//        anotation.title = "Meu ponto"
+//        anotation.subtitle = "Teste do map view! \(NSString(format: "%2.f", distanceInMeters))"
+//        mapView.addAnnotation(anotation)
         
         // Drop a pin
         
         
-        let dropPin = FutAnotation(coordinate: location, title: "Teste", subtitle: "\(distanceInMeters)", detailURL: NSURL(string: "https://google.com")!, enableInfoButton : true)
-        mapView.addAnnotation(dropPin)
+        let dropPin = FutAnotation(coordinate: location, title: " Metros", subtitle: "\(NSString(format: "%2.f", distanceInMeters))", detailURL: NSURL(string: "https://google.com")!, enableInfoButton : true)
+        mapView(map, viewForAnnotation: dropPin)
+//        
+        map.addAnnotation(dropPin)
     }
 
     
@@ -104,6 +108,42 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?
+    {
+        if (annotation is MKUserLocation) {
+            return nil
+        }
+        
+        if (annotation.isKindOfClass(FutAnotation)) {
+            let customAnnotation = annotation as? FutAnotation
+            mapView.translatesAutoresizingMaskIntoConstraints = false
+            var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("FutAnotation") as MKAnnotationView!
+            
+            if (annotationView == nil) {
+                annotationView = customAnnotation?.annotationView()
+            } else {
+                annotationView.annotation = annotation;
+            }
+            return annotationView
+        } else {
+            let reuseId = "test"
+            
+            var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+            if anView == nil {
+                anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+                anView!.image = UIImage(named:"flag_marker.png")
+                anView!.canShowCallout = true
+            }
+            else {
+                //we are re-using a view, update its annotation reference...
+                anView!.annotation = annotation
+            }
+            
+            return anView
+        }
+    }
+
     /*
     // MARK: - Navigation
 
@@ -113,7 +153,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-    
     
 
 }

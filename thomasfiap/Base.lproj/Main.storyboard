@@ -115,21 +115,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NtX-EY-8RW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                            </mapView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9z-Pf-yde">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem title="Mapa" id="nEc-3P-Mzx"/>
                                     <barButtonItem title="Lista" id="tna-zk-6v1">
                                         <connections>
-                                            <segue destination="LNF-Px-ZQi" kind="show" id="tCS-q4-zom"/>
+                                            <segue destination="CRL-0B-AKs" kind="show" id="2Wl-KF-aGi"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Perfil" id="SG7-hv-JwQ"/>
                                 </items>
                             </toolbar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NtX-EY-8RW">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
-                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -143,40 +143,30 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="NtX-EY-8RW" id="OYd-Ff-iGN"/>
+                        <outlet property="map" destination="NtX-EY-8RW" id="Let-gn-9kA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uO-gZ-nIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1019" y="442"/>
         </scene>
-        <!--Lista Table View Controller-->
-        <scene sceneID="ghr-Ed-OGD">
+        <!--View Controller-->
+        <scene sceneID="rBS-G0-fdF">
             <objects>
-                <tableViewController id="LNF-Px-ZQi" customClass="ListaTableViewController" customModule="thomasfiap" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PxP-dG-7Cq">
+                <viewController id="CRL-0B-AKs" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Rv-G4-QjR"/>
+                        <viewControllerLayoutGuide type="bottom" id="sgN-Bg-kJ9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tpl-it-1Tn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="T8v-aT-wGM">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T8v-aT-wGM" id="RVm-uo-AAd">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="LNF-Px-ZQi" id="dqG-yX-JJ1"/>
-                            <outlet property="delegate" destination="LNF-Px-ZQi" id="nXT-ZI-die"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ul4-va-HVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1pV-kY-PGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1019" y="1147"/>
+            <point key="canvasLocation" x="1019" y="1189"/>
         </scene>
         <!--Cadastro View Controller-->
         <scene sceneID="kIU-fq-7or">

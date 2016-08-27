@@ -12,7 +12,6 @@
 		AC4DB5C41D65475D00FBC4A2 /* background.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4DB5C31D65475D00FBC4A2 /* background.swift */; };
 		AC4DB5CA1D6548C800FBC4A2 /* navigationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4DB5C91D6548C800FBC4A2 /* navigationImage.swift */; };
 		AC52442E1D71F168008055D8 /* FutAnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52442D1D71F168008055D8 /* FutAnotation.swift */; };
-		AC5244301D71FA14008055D8 /* ListaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52442F1D71FA14008055D8 /* ListaTableViewController.swift */; };
 		AC5A0D671D6E602100188B56 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A0D661D6E602100188B56 /* MapViewController.swift */; };
 		AC5A0D691D6E608D00188B56 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC5A0D681D6E608D00188B56 /* CoreLocation.framework */; };
 		AC5A0D6B1D6E60A100188B56 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC5A0D6A1D6E60A100188B56 /* MapKit.framework */; };
@@ -51,7 +50,6 @@
 		AC4DB5C31D65475D00FBC4A2 /* background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = background.swift; sourceTree = "<group>"; };
 		AC4DB5C91D6548C800FBC4A2 /* navigationImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = navigationImage.swift; sourceTree = "<group>"; };
 		AC52442D1D71F168008055D8 /* FutAnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutAnotation.swift; sourceTree = "<group>"; };
-		AC52442F1D71FA14008055D8 /* ListaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaTableViewController.swift; sourceTree = "<group>"; };
 		AC5A0D661D6E602100188B56 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AC5A0D681D6E608D00188B56 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AC5A0D6A1D6E60A100188B56 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -148,7 +146,6 @@
 				AC5A0D6C1D6E7A0600188B56 /* Jogador.swift */,
 				AC5A0D6E1D6E7A2B00188B56 /* Quadra.swift */,
 				AC52442D1D71F168008055D8 /* FutAnotation.swift */,
-				AC52442F1D71FA14008055D8 /* ListaTableViewController.swift */,
 			);
 			path = thomasfiap;
 			sourceTree = "<group>";
@@ -239,6 +236,7 @@
 				TargetAttributes = {
 					AC72EBFB1D62881100A657A5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 36NA55GBGM;
 					};
 					AC72EC0F1D62881100A657A5 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -313,7 +311,6 @@
 				AC5A0D6F1D6E7A2B00188B56 /* Quadra.swift in Sources */,
 				AC4DB5C41D65475D00FBC4A2 /* background.swift in Sources */,
 				AC4DB5C01D6541E900FBC4A2 /* CadastroViewController.swift in Sources */,
-				AC5244301D71FA14008055D8 /* ListaTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,11 +454,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = thomasfiap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fiap.thomasfiap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -469,11 +469,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = thomasfiap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fiap.thomasfiap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

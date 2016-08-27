@@ -26,21 +26,34 @@ class FutAnotation: NSObject, MKAnnotation {
         }
         
         func annotationView() -> MKAnnotationView {
-            let view = MKAnnotationView(annotation: self, reuseIdentifier: "CustomAnnotation")
+            let view = MKAnnotationView(annotation: self, reuseIdentifier: "FutAnnotation")
             view.translatesAutoresizingMaskIntoConstraints = false
             view.enabled = true
             view.canShowCallout = true
-            view.image = UIImage(named: "bora-jogar.png")
+            
+            let pinImage = UIImage(named: "bora-jogar.png")//Imagem do Pin
+            let size = CGSize(width: 50, height: 50)
+            UIGraphicsBeginImageContext(size)
+            pinImage!.drawInRect(CGRectMake(0, 0, size.width, size.height))
+            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            view.image = resizedImage
             view.rightCalloutAccessoryView = UIButton(type: UIButtonType.Custom)
             view.centerOffset = CGPointMake(0, -32)
             
             if(self.enableInfoButton){
-                let deleteButton = UIButton(type: UIButtonType.System) as UIButton
+                let deleteButton = UIButton(type: UIButtonType.Custom)
                 deleteButton.frame.size.width = 35
                 deleteButton.frame.size.height = 35
                 deleteButton.backgroundColor = UIColor.whiteColor()
-                deleteButton.setImage(UIImage(named: "bora-jogar.png"), forState: .Normal)
-                deleteButton.addTarget(self, action: "infoClicked:", forControlEvents: .TouchUpInside)
+                let btnImage = UIImage(named: "bora-jogar.png")//Imagem dentro da annotation
+                let sizeImage = CGSize(width: 35, height: 35)
+                UIGraphicsBeginImageContext(sizeImage)
+                btnImage!.drawInRect(CGRectMake(0, 0, sizeImage.width, sizeImage.height))
+                let resizedBtnImage = UIGraphicsGetImageFromCurrentImageContext()
+                UIGraphicsEndImageContext()
+                deleteButton.setImage(resizedBtnImage, forState: .Normal)
+                deleteButton.addTarget(self, action: #selector(FutAnotation.infoClicked(_:)), forControlEvents: .TouchUpInside)
                 
                 view.leftCalloutAccessoryView = deleteButton
             }
