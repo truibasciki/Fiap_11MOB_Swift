@@ -13,17 +13,18 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
 
+    
+    
     @IBOutlet weak var mapView: MKMapView!
     
     var locationManager: CLLocationManager!
+    
     
     var latitude:Double = -23.5629
     var longitude:Double = -46.6544
     
     var scale:Double = 5
-    
-    var annotationList:[MKPointAnnotation] = []
-    
+        
     var userLocation: CLLocation!
 
     
@@ -86,7 +87,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         anotation.subtitle = "Teste do map view! \(distanceInMeters)"
         mapView.addAnnotation(anotation)
         
-        annotationList.append(anotation)
+        // Drop a pin
+        
+        
+        let dropPin = FutAnotation(coordinate: location, title: "Teste", subtitle: "\(distanceInMeters)", detailURL: NSURL(string: "https://google.com")!, enableInfoButton : true)
+        mapView.addAnnotation(dropPin)
     }
 
     
