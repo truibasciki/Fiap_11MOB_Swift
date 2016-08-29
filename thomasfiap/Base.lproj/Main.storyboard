@@ -40,6 +40,12 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="244" y="210" width="100" height="21"/>
+                                </variation>
+                                <variation key="widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="444" y="210" width="100" height="21"/>
+                                </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSr-EF-lqk">
                                 <rect key="frame" x="344" y="255" width="100" height="30"/>
@@ -149,6 +155,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uO-gZ-nIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1019" y="442"/>
+        </scene>
+        <!--Player View Controller-->
+        <scene sceneID="gXC-O3-V5c">
+            <objects>
+                <viewController id="k3J-ZI-wNM" userLabel="Player View Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mlZ-nP-jYY"/>
+                        <viewControllerLayoutGuide type="bottom" id="nLd-D1-isN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7T2-JY-kAq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Pelé" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaP-Md-rXC" userLabel="Nome de Boleiro">
+                                <rect key="frame" x="279" y="260" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="179" y="269" width="43" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="(Edson Arantes do Nascimento)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fn-vN-7yX" userLabel="Nome">
+                                <rect key="frame" x="196" y="283" width="209" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="96" y="289" width="209" height="21"/>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xed-Ht-m8i" userLabel="Foto">
+                                <rect key="frame" x="200" y="20" width="200" height="200"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="100" y="28" width="200" height="200"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="30 anos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVh-rA-ile" userLabel="Idade">
+                                <rect key="frame" x="269" y="340" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="169" y="340" width="62" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="(11) 9 9999-9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXW-Qp-kzN" userLabel="Telefone">
+                                <rect key="frame" x="232" y="369" width="137" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="132" y="363" width="137" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LVh-rA-ile" firstAttribute="centerX" secondItem="7T2-JY-kAq" secondAttribute="centerX" id="GCC-ah-ZZR"/>
+                            <constraint firstItem="yaP-Md-rXC" firstAttribute="centerX" secondItem="7T2-JY-kAq" secondAttribute="centerX" id="SnA-80-Rtv"/>
+                            <constraint firstItem="aXW-Qp-kzN" firstAttribute="centerX" secondItem="7T2-JY-kAq" secondAttribute="centerX" id="X9P-RV-0qr"/>
+                            <constraint firstItem="xed-Ht-m8i" firstAttribute="centerX" secondItem="7T2-JY-kAq" secondAttribute="centerX" id="sEG-0S-DHb"/>
+                            <constraint firstItem="5fn-vN-7yX" firstAttribute="centerX" secondItem="7T2-JY-kAq" secondAttribute="centerX" id="sVw-K9-RqV"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="sEG-0S-DHb"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="sEG-0S-DHb"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IKI-JM-2we" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1788" y="456"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="rBS-G0-fdF">
@@ -290,6 +375,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NyJ-lh-roT"/>
+        <segue reference="fK0-st-eqj"/>
     </inferredMetricsTieBreakers>
 </document>
