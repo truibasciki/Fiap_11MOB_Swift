@@ -115,21 +115,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NtX-EY-8RW">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
-                            </mapView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9z-Pf-yde">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Mapa" id="nEc-3P-Mzx"/>
                                     <barButtonItem title="Lista" id="tna-zk-6v1">
                                         <connections>
-                                            <segue destination="CRL-0B-AKs" kind="show" id="2Wl-KF-aGi"/>
+                                            <segue destination="CRL-0B-AKs" kind="show" id="4Nq-tm-6gT"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Perfil" id="SG7-hv-JwQ"/>
                                 </items>
                             </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NtX-EY-8RW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -150,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="1019" y="442"/>
         </scene>
-        <!--View Controller-->
+        <!--Lista View Controller-->
         <scene sceneID="rBS-G0-fdF">
             <objects>
-                <viewController id="CRL-0B-AKs" sceneMemberID="viewController">
+                <viewController id="CRL-0B-AKs" customClass="ListaViewController" customModule="thomasfiap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Rv-G4-QjR"/>
                         <viewControllerLayoutGuide type="bottom" id="sgN-Bg-kJ9"/>
@@ -161,8 +160,38 @@
                     <view key="view" contentMode="scaleToFill" id="tpl-it-1Tn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FVN-dB-iUK">
+                                <rect key="frame" x="0.0" y="65" width="601" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ix5-Kp-huz">
+                                <rect key="frame" x="0.0" y="94" width="600" height="506"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CRL-0B-AKs" id="DQJ-wd-5J2"/>
+                                    <outlet property="delegate" destination="CRL-0B-AKs" id="7ON-fD-0R6"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ix5-Kp-huz" secondAttribute="trailing" id="1cK-nT-Y52"/>
+                            <constraint firstItem="Ix5-Kp-huz" firstAttribute="top" secondItem="FVN-dB-iUK" secondAttribute="bottom" constant="1" id="2Uk-ia-NTF"/>
+                            <constraint firstAttribute="bottom" secondItem="Ix5-Kp-huz" secondAttribute="bottom" id="KZN-nf-d06"/>
+                            <constraint firstItem="FVN-dB-iUK" firstAttribute="top" secondItem="2Rv-G4-QjR" secondAttribute="bottom" constant="1" id="fYn-PF-010"/>
+                            <constraint firstItem="FVN-dB-iUK" firstAttribute="centerX" secondItem="tpl-it-1Tn" secondAttribute="centerX" id="gKo-yG-iuH"/>
+                            <constraint firstItem="Ix5-Kp-huz" firstAttribute="leading" secondItem="tpl-it-1Tn" secondAttribute="leading" id="pPz-6r-pUK"/>
+                            <constraint firstAttribute="leading" secondItem="FVN-dB-iUK" secondAttribute="leading" id="pZs-X5-AyG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="segmentedTipo" destination="FVN-dB-iUK" id="yOd-Gd-Wbg"/>
+                        <outlet property="tableLista" destination="Ix5-Kp-huz" id="WiD-kZ-KSS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pV-kY-PGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
