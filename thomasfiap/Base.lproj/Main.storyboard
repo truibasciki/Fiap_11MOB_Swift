@@ -120,7 +120,7 @@
                                 <items>
                                     <barButtonItem title="Lista" id="tna-zk-6v1">
                                         <connections>
-                                            <segue destination="CRL-0B-AKs" kind="show" id="4Nq-tm-6gT"/>
+                                            <segue destination="CRL-0B-AKs" kind="show" id="VLV-AU-mhg"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Perfil" id="SG7-hv-JwQ"/>
@@ -164,13 +164,26 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FVN-dB-iUK">
                                 <rect key="frame" x="0.0" y="65" width="601" height="29"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Jogador"/>
+                                    <segment title="Quadra"/>
                                 </segments>
+                                <connections>
+                                    <action selector="mudarLista:" destination="CRL-0B-AKs" eventType="valueChanged" id="tsB-tm-sQ7"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ix5-Kp-huz">
                                 <rect key="frame" x="0.0" y="94" width="600" height="506"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellListaUsu" id="3sh-Ry-sZq">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3sh-Ry-sZq" id="7nT-gH-Ufq">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="CRL-0B-AKs" id="DQJ-wd-5J2"/>
                                     <outlet property="delegate" destination="CRL-0B-AKs" id="7ON-fD-0R6"/>

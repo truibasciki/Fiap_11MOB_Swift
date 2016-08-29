@@ -43,7 +43,8 @@ class ListaViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        let myCell = tableView.dequeueReusableCellWithIdentifier("cellList", forIndexPath: indexPath)
+        
+        let myCell = tableView.dequeueReusableCellWithIdentifier("cellListaUsu", forIndexPath: indexPath)
         if(segmentedTipo.selectedSegmentIndex == 0){
             myCell.textLabel?.text = listaJogador[indexPath.row]
         }else{
