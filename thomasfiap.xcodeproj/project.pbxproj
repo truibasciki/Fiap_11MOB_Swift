@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC15B3E91D74FB9600790E37 /* ListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC15B3E81D74FB9600790E37 /* ListaViewController.swift */; };
 		AC4DB5B71D65280000FBC4A2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4DB5B61D65280000FBC4A2 /* LoginViewController.swift */; };
 		AC4DB5C01D6541E900FBC4A2 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4DB5BF1D6541E900FBC4A2 /* CadastroViewController.swift */; };
 		AC4DB5C41D65475D00FBC4A2 /* background.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4DB5C31D65475D00FBC4A2 /* background.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC15B3E81D74FB9600790E37 /* ListaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaViewController.swift; sourceTree = "<group>"; };
 		AC4DB5B61D65280000FBC4A2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC4DB5BF1D6541E900FBC4A2 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		AC4DB5C31D65475D00FBC4A2 /* background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = background.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				AC5A0D6C1D6E7A0600188B56 /* Jogador.swift */,
 				AC5A0D6E1D6E7A2B00188B56 /* Quadra.swift */,
 				AC52442D1D71F168008055D8 /* FutAnotation.swift */,
+				AC15B3E81D74FB9600790E37 /* ListaViewController.swift */,
 			);
 			path = thomasfiap;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			files = (
 				AC4DB5CA1D6548C800FBC4A2 /* navigationImage.swift in Sources */,
 				AC5A0D671D6E602100188B56 /* MapViewController.swift in Sources */,
+				AC15B3E91D74FB9600790E37 /* ListaViewController.swift in Sources */,
 				AC5A0D6D1D6E7A0600188B56 /* Jogador.swift in Sources */,
 				AC52442E1D71F168008055D8 /* FutAnotation.swift in Sources */,
 				AC4DB5B71D65280000FBC4A2 /* LoginViewController.swift in Sources */,

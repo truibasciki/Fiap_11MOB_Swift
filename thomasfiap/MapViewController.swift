@@ -144,6 +144,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
 
+    @IBAction func abrirLista(sender: AnyObject) {
+    }
     /*
     // MARK: - Navigation
 
