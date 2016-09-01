@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xAq-RC-UbC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xAq-RC-UbC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -134,7 +134,7 @@
                                     </barButtonItem>
                                     <barButtonItem title="Perfil" id="SG7-hv-JwQ">
                                         <connections>
-                                            <segue destination="k3J-ZI-wNM" kind="show" id="VUH-Yg-1Ku"/>
+                                            <segue destination="k3J-ZI-wNM" kind="show" identifier="MapaPerfilSegue" id="VUH-Yg-1Ku"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -348,6 +348,7 @@
                     <connections>
                         <outlet property="segmentedTipo" destination="FVN-dB-iUK" id="yOd-Gd-Wbg"/>
                         <outlet property="tableLista" destination="Ix5-Kp-huz" id="WiD-kZ-KSS"/>
+                        <segue destination="k3J-ZI-wNM" kind="show" identifier="ListaPerfilSegue" id="6x1-MI-EEd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pV-kY-PGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -544,6 +545,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="VUH-Yg-1Ku"/>
         <segue reference="NyJ-lh-roT"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -144,6 +144,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
 
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.leftCalloutAccessoryView {
+            performSegueWithIdentifier("MapaPerfilSegue", sender: view)
+        }
+    }
+    
     @IBAction func abrirLista(sender: AnyObject) {
     }
     /*

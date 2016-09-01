@@ -55,6 +55,13 @@ class ListaViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return myCell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        self.performSegueWithIdentifier("ListaPerfilSegue", sender: self)
+        
+        
+    }
+    
     @IBAction func mudarLista(sender: AnyObject) {
         tableLista.reloadData()
     }

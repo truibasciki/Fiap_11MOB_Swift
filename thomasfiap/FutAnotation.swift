@@ -53,17 +53,11 @@ class FutAnotation: NSObject, MKAnnotation {
                 let resizedBtnImage = UIGraphicsGetImageFromCurrentImageContext()
                 UIGraphicsEndImageContext()
                 deleteButton.setImage(resizedBtnImage, forState: .Normal)
-                deleteButton.addTarget(self, action: #selector(FutAnotation.infoClicked(_:)), forControlEvents: .TouchUpInside)
                 
                 view.leftCalloutAccessoryView = deleteButton
             }
             return view
         }
-        
-        func infoClicked(sender: AnyObject?) {
-            
-            print("infoClicked")
-            
-        }
+         
         
     }
