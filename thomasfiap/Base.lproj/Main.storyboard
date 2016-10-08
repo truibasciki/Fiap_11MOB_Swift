@@ -162,7 +162,7 @@
         <!--Player View Controller-->
         <scene sceneID="gXC-O3-V5c">
             <objects>
-                <viewController id="k3J-ZI-wNM" userLabel="Player View Controller" sceneMemberID="viewController">
+                <viewController id="k3J-ZI-wNM" userLabel="Player View Controller" customClass="PerfilViewController" customModule="thomasfiap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mlZ-nP-jYY"/>
                         <viewControllerLayoutGuide type="bottom" id="nLd-D1-isN"/>
@@ -288,6 +288,14 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="fotoJogador" destination="xed-Ht-m8i" id="U8u-Gb-RcX"/>
+                        <outlet property="txtApelido" destination="yaP-Md-rXC" id="Uuo-2l-cwu"/>
+                        <outlet property="txtIdade" destination="LVh-rA-ile" id="KYx-Vy-tnf"/>
+                        <outlet property="txtLatLong" destination="GoD-Pi-IJt" id="nKP-en-ALL"/>
+                        <outlet property="txtNome" destination="5fn-vN-7yX" id="1dH-xZ-6kH"/>
+                        <outlet property="txtTelefone" destination="aXW-Qp-kzN" id="gsq-pq-G6z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKI-JM-2we" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -545,7 +553,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VUH-Yg-1Ku"/>
         <segue reference="NyJ-lh-roT"/>
+        <segue reference="6x1-MI-EEd"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -18,6 +18,7 @@
 		AC5A0D6B1D6E60A100188B56 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC5A0D6A1D6E60A100188B56 /* MapKit.framework */; };
 		AC5A0D6D1D6E7A0600188B56 /* Jogador.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A0D6C1D6E7A0600188B56 /* Jogador.swift */; };
 		AC5A0D6F1D6E7A2B00188B56 /* Quadra.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A0D6E1D6E7A2B00188B56 /* Quadra.swift */; };
+		AC714E641DA86FF500A0ABFD /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC714E631DA86FF500A0ABFD /* PerfilViewController.swift */; };
 		AC72EC001D62881100A657A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72EBFF1D62881100A657A5 /* AppDelegate.swift */; };
 		AC72EC051D62881100A657A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC72EC031D62881100A657A5 /* Main.storyboard */; };
 		AC72EC071D62881100A657A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC72EC061D62881100A657A5 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		AC5A0D6A1D6E60A100188B56 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AC5A0D6C1D6E7A0600188B56 /* Jogador.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jogador.swift; sourceTree = "<group>"; };
 		AC5A0D6E1D6E7A2B00188B56 /* Quadra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quadra.swift; sourceTree = "<group>"; };
+		AC714E631DA86FF500A0ABFD /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		AC72EBFC1D62881100A657A5 /* thomasfiap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thomasfiap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC72EBFF1D62881100A657A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC72EC041D62881100A657A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				AC5A0D6E1D6E7A2B00188B56 /* Quadra.swift */,
 				AC52442D1D71F168008055D8 /* FutAnotation.swift */,
 				AC15B3E81D74FB9600790E37 /* ListaViewController.swift */,
+				AC714E631DA86FF500A0ABFD /* PerfilViewController.swift */,
 			);
 			path = thomasfiap;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				AC5A0D6D1D6E7A0600188B56 /* Jogador.swift in Sources */,
 				AC52442E1D71F168008055D8 /* FutAnotation.swift in Sources */,
 				AC4DB5B71D65280000FBC4A2 /* LoginViewController.swift in Sources */,
+				AC714E641DA86FF500A0ABFD /* PerfilViewController.swift in Sources */,
 				AC72EC001D62881100A657A5 /* AppDelegate.swift in Sources */,
 				AC5A0D6F1D6E7A2B00188B56 /* Quadra.swift in Sources */,
 				AC4DB5C41D65475D00FBC4A2 /* background.swift in Sources */,

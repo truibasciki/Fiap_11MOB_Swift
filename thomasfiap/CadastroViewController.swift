@@ -9,7 +9,9 @@
 import UIKit
 
 class CadastroViewController: UIViewController {
-
+    
+    var cadastrado:Bool = false
+    
     @IBOutlet weak var segmentedJogQua: UISegmentedControl!
     
     @IBOutlet weak var NomePlayer: UILabel!
@@ -22,7 +24,7 @@ class CadastroViewController: UIViewController {
     @IBOutlet weak var txtTelefone: UITextField!
     @IBOutlet weak var txtLatitude: UITextField!
     @IBOutlet weak var txtLongitude: UITextField!
-    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,15 +73,103 @@ navigationItem.imageNavigation();
     @IBAction func cadastrar(sender: AnyObject) {
         
         if(segmentedJogQua.selectedSegmentIndex == 0) {
-            
-            
+            addJogador()
         } else {
-            
-            
+            addQuadra()
+        }
+        
+        if(cadastrado){
+            self.performSegueWithIdentifier("CadastroMapaSegue", sender: self)
+        }else{
             
         }
         
     }
+    
+    func addJogador(){
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://gustavocalixto.pe.hu/index.php/cliente")!)
+        request.HTTPMethod = "POST"
+        let json = ["email":txtEmail.text! , "login": txtLogin.text!, "senha": txtSenha.text!, "telefone": txtTelefone.text!]
+        
+        do{
+        let jsonData = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
+        
+        
+        request.HTTPBody = jsonData
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
+            guard error == nil && data != nil else {                                                                          print("error=\(error)")
+                return
+            }
+            
+            do{
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                
+                let resultado  = json as? [[String: AnyObject]]
+                
+                for lines in resultado!  {
+                    if let result = lines["result"] as? Bool {
+                        self.cadastrado = result
+                    }
+                    
+                }
+            }
+            catch {
+                
+            }
+
+        }
+        task.resume()
+        }catch{
+        }
+    }
+    
+    
+    func addQuadra(){
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://gustavocalixto.pe.hu/index.php/cliente")!)
+        request.HTTPMethod = "POST"
+        let json = ["email":txtEmail.text! , "login": txtLogin.text!, "senha": txtSenha.text!, "telefone": txtTelefone.text!, "latitude":txtLatitude.text!, "longitude":txtLongitude.text!]
+        
+        do{
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
+            
+            
+            request.HTTPBody = jsonData
+            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+            
+            
+            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
+                guard error == nil && data != nil else {                                                                          print("error=\(error)")
+                    return
+                }
+                
+                do{
+                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                    
+                    let resultado  = json as? [[String: AnyObject]]
+                    
+                    for lines in resultado!  {
+                        if let result = lines["result"] as? Bool {
+                            self.cadastrado = result
+                        }
+                        
+                    }
+                }
+                catch {
+                    
+                }
+                
+            }
+            task.resume()
+        }catch{
+        }
+    }
+
+    
     /*
     // MARK: - Navigation
 
