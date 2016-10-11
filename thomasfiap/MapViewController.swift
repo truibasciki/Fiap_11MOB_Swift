@@ -92,11 +92,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // Drop a pin
         
         
-        let dropPin = FutAnotation(coordinate: location, title: " Metros", subtitle: "\(NSString(format: "%2.f", distanceInMeters))", detailURL: NSURL(string: "https://google.com")!, enableInfoButton : true)
+        
+        
+        
+        let dropPin = FutAnotation(coordinate: location, title: " Thomas", subtitle: "\(NSString(format: "%2.f", distanceInMeters))", detailURL: NSURL(string: "https://google.com")!, enableInfoButton : true)
         mapView(map, viewForAnnotation: dropPin)
 //        
         map.addAnnotation(dropPin)
     }
+    
 
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
@@ -160,7 +164,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         var long:Bool = false
         let request = NSMutableURLRequest(URL: NSURL(string: "http://11mob.890m.com/usuario.php/listar_todos")!)
         request.HTTPMethod = "POST"
-        let json = ["latitude": 0.0, "longitude":0.0 ]
+        let json = ["latitude": -23.564359, "longitude":-46.652628 ]
         var semaphore = dispatch_semaphore_create(0)
         do{
             let jsonData = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
@@ -182,8 +186,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                         
                         
                         for lines in resultado {
-                            var latit:Double = 0.0
-                            var longit:Double = 0.0
+                            var latit:Double = -23.564359
+                            var longit:Double = -46.652628
                             if let latitude = lines["latitude"] as? Double {
                                 lat = true
                                 latit = latitude
