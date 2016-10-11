@@ -19,7 +19,7 @@ class PerfilViewController: UIViewController {
     @IBOutlet weak var txtLatLong: UILabel!
     
     var tipoUsu:String = ""
-    var id:Int = 0;
+    var id:Int = 1;
     
     override func viewDidLoad() {
         super.viewDidLoad()

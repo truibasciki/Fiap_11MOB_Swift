@@ -25,6 +25,7 @@
 		AC72EC0A1D62881100A657A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC72EC081D62881100A657A5 /* LaunchScreen.storyboard */; };
 		AC72EC151D62881100A657A5 /* thomasfiapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72EC141D62881100A657A5 /* thomasfiapTests.swift */; };
 		AC72EC201D62881100A657A5 /* thomasfiapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72EC1F1D62881100A657A5 /* thomasfiapUITests.swift */; };
+		ACB85D531DAC707F00CCFF2D /* thomas.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB85D521DAC707F00CCFF2D /* thomas.png */; };
 		ACE2CD051D6BDDBB00182658 /* bora-jogar.png in Resources */ = {isa = PBXBuildFile; fileRef = ACE2CD031D6BDDBB00182658 /* bora-jogar.png */; };
 		ACE2CD061D6BDDBB00182658 /* Champions-League-8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACE2CD041D6BDDBB00182658 /* Champions-League-8.jpg */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		AC72EC1B1D62881100A657A5 /* thomasfiapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = thomasfiapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC72EC1F1D62881100A657A5 /* thomasfiapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thomasfiapUITests.swift; sourceTree = "<group>"; };
 		AC72EC211D62881100A657A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACB85D521DAC707F00CCFF2D /* thomas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thomas.png; path = ../../thomas.png; sourceTree = "<group>"; };
 		ACE2CD031D6BDDBB00182658 /* bora-jogar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bora-jogar.png"; sourceTree = "<group>"; };
 		ACE2CD041D6BDDBB00182658 /* Champions-League-8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Champions-League-8.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 		AC4DB5B81D65284100FBC4A2 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				ACB85D521DAC707F00CCFF2D /* thomas.png */,
 				ACE2CD031D6BDDBB00182658 /* bora-jogar.png */,
 				ACE2CD041D6BDDBB00182658 /* Champions-League-8.jpg */,
 			);
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC72EC0A1D62881100A657A5 /* LaunchScreen.storyboard in Resources */,
+				ACB85D531DAC707F00CCFF2D /* thomas.png in Resources */,
 				ACE2CD051D6BDDBB00182658 /* bora-jogar.png in Resources */,
 				AC72EC071D62881100A657A5 /* Assets.xcassets in Resources */,
 				AC72EC051D62881100A657A5 /* Main.storyboard in Resources */,
