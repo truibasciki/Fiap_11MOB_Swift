@@ -197,10 +197,10 @@ class ListaViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let otherView = segue.destinationViewController as! PerfilViewController
             if(segmentedTipo.selectedSegmentIndex == 0){
             otherView.tipoUsu = "J"
-                otherView.id = idJogador[self.lastSelectIndex];
+                otherView.id = self.lastSelectIndex + 1;
             }else{
             otherView.tipoUsu = "Q"
-                otherView.id = idQuadra[self.lastSelectIndex];
+                otherView.id = self.lastSelectIndex + 1;
             }
             
         }

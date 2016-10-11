@@ -189,7 +189,7 @@
                                     <rect key="frame" x="96" y="289" width="209" height="21"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thomas.png" translatesAutoresizingMaskIntoConstraints="NO" id="xed-Ht-m8i" userLabel="Foto">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="player.png" translatesAutoresizingMaskIntoConstraints="NO" id="xed-Ht-m8i" userLabel="Foto">
                                 <rect key="frame" x="200" y="84" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="AeG-jJ-eB9"/>
@@ -553,7 +553,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="thomas.png" width="200" height="200"/>
+        <image name="player.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fK0-st-eqj"/>
