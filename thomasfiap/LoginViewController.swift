@@ -28,10 +28,9 @@ class LoginViewController: UIViewController{
 
     @IBAction func logar(sender: AnyObject) {
         
-        verificaLogin()
         
         
-        if(self.logar){
+        if(verificaLogin()){
         self.performSegueWithIdentifier("LoginMapaSegue", sender: self)
         }else{
             
@@ -41,14 +40,16 @@ class LoginViewController: UIViewController{
     }
     
     
-    func verificaLogin()
+    func verificaLogin() -> Bool
     {
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://gustavocalixto.pe.hu/index.php/cliente")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://11mob.890m.com/usuario.php/login")!)
         request.HTTPMethod = "POST"
+        var resultado:Bool = false
+        
+        var semaphore = dispatch_semaphore_create(0)
         do {
             let json = ["login":txtLogin.text! , "senha": txtSenha.text!]
             let jsonData = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
-            
             
             
             request.HTTPBody = jsonData
@@ -60,25 +61,26 @@ class LoginViewController: UIViewController{
                 }
                 
                 do{
-                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                    let json : NSDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
                 
-                let resultado  = json as? [[String: AnyObject]]
-                
-                for lines in resultado!  {
-                    if let result = lines["result"] as? Bool {
-                        self.logar = result
-                    }
+                    resultado  = json.valueForKey("result") as! Bool
+                    dispatch_semaphore_signal(semaphore)
+                }catch {
+                    
                     
                 }
-                }
-                catch {
-                    
-                }
+                
             }
+           
+            
             task.resume()
         
+        
         } catch {
+    
         }
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+    return resultado
         
     }
 

@@ -73,9 +73,9 @@ navigationItem.imageNavigation();
     @IBAction func cadastrar(sender: AnyObject) {
         
         if(segmentedJogQua.selectedSegmentIndex == 0) {
-            addJogador()
+            cadastrado = addJogador()
         } else {
-            addQuadra()
+           cadastrado = addQuadra()
         }
         
         if(cadastrado){
@@ -86,12 +86,14 @@ navigationItem.imageNavigation();
         
     }
     
-    func addJogador(){
+    func addJogador() -> Bool{
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://gustavocalixto.pe.hu/index.php/cliente")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://11mob.890m.com/jogador.php/add_jogador")!)
         request.HTTPMethod = "POST"
         let json = ["email":txtEmail.text! , "login": txtLogin.text!, "senha": txtSenha.text!, "telefone": txtTelefone.text!]
+        var resultado:Bool = false
         
+        var semaphore = dispatch_semaphore_create(0)
         do{
         let jsonData = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
         
@@ -106,34 +108,33 @@ navigationItem.imageNavigation();
             }
             
             do{
-                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                let json : NSDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
                 
-                let resultado  = json as? [[String: AnyObject]]
-                
-                for lines in resultado!  {
-                    if let result = lines["result"] as? Bool {
-                        self.cadastrado = result
-                    }
-                    
-                }
-            }
+                resultado  = json.valueForKey("result") as! Bool
+                dispatch_semaphore_signal(semaphore)            }
             catch {
-                
+                dispatch_semaphore_signal(semaphore)
             }
 
         }
         task.resume()
         }catch{
+            dispatch_semaphore_signal(semaphore)
         }
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        return resultado
+
     }
     
     
-    func addQuadra(){
+    func addQuadra() -> Bool{
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://gustavocalixto.pe.hu/index.php/cliente")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://11mob.890m.com/quadra.php/add_quadra")!)
         request.HTTPMethod = "POST"
         let json = ["email":txtEmail.text! , "login": txtLogin.text!, "senha": txtSenha.text!, "telefone": txtTelefone.text!, "latitude":txtLatitude.text!, "longitude":txtLongitude.text!]
+        var resultado:Bool = false
         
+        var semaphore = dispatch_semaphore_create(0)
         do{
             let jsonData = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
             
@@ -148,25 +149,22 @@ navigationItem.imageNavigation();
                 }
                 
                 do{
-                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                    let json : NSDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
                     
-                    let resultado  = json as? [[String: AnyObject]]
-                    
-                    for lines in resultado!  {
-                        if let result = lines["result"] as? Bool {
-                            self.cadastrado = result
-                        }
-                        
-                    }
-                }
+                    resultado  = json.valueForKey("result") as! Bool
+                    dispatch_semaphore_signal(semaphore)                }
                 catch {
-                    
+                    dispatch_semaphore_signal(semaphore)
                 }
                 
             }
             task.resume()
         }catch{
+            dispatch_semaphore_signal(semaphore)
         }
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        return resultado
+
     }
 
     

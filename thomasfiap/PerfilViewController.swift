@@ -18,11 +18,22 @@ class PerfilViewController: UIViewController {
     
     @IBOutlet weak var txtLatLong: UILabel!
     
+    var tipoUsu:String = ""
+    var id:Int = 0;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addBackground()
         navigationItem.imageNavigation()
 
+        if(tipoUsu == "J"){
+            getJogador(id)
+        }
+        else{
+            getQuadra(id)
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -32,9 +43,9 @@ class PerfilViewController: UIViewController {
     }
     
 
-    func addJogador(id: Int32){
+    func getJogador(id: Int){
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://gustavocalixto.pe.hu/index.php/cliente")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://11mob.890m.com/jogador.php/consultar_jogador")!)
         request.HTTPMethod = "POST"
         let json = ["id": String(id) ]
         
@@ -54,9 +65,10 @@ class PerfilViewController: UIViewController {
                 do{
                     let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
                     
-                    let resultado  = json as? [[String: AnyObject]]
+                    if let resultado = json["result"] as? [[String: AnyObject]] {
+                        
                     
-                    for lines in resultado!  {
+                    for lines in resultado {
                         if let apelido = lines["apelido"] as? String {
                             self.txtApelido.text = apelido
                         }
@@ -74,6 +86,7 @@ class PerfilViewController: UIViewController {
                         }
                         
                     }
+                    }
                 }
                 catch {
                     
@@ -84,6 +97,62 @@ class PerfilViewController: UIViewController {
         }catch{
         }
     }
+    
+    func getQuadra(id: Int){
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://11mob.890m.com/quadra/consultar_quadra")!)
+        request.HTTPMethod = "POST"
+        let json = ["id": String(id) ]
+        
+        do{
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
+            
+            
+            request.HTTPBody = jsonData
+            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+            
+            
+            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
+                guard error == nil && data != nil else {                                                                          print("error=\(error)")
+                    return
+                }
+                
+                do{
+                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                    
+                    if let resultado = json["result"] as? [[String: AnyObject]] {
+                        
+                        
+                        for lines in resultado {
+                            if let apelido = lines["apelido"] as? String {
+                                self.txtApelido.text = apelido
+                            }
+                            if let nome = lines["nome"] as? String {
+                                self.txtNome.text = nome
+                            }
+                            if let idade = lines["idade"] as? String {
+                                self.txtIdade.text = idade
+                            }
+                            if let telefone = lines["telefone"] as? String {
+                                self.txtTelefone.text = telefone
+                            }
+                            if let latLong = lines["latLong"] as? String {
+                                self.txtApelido.text = latLong
+                            }
+                            
+                        }
+                    }
+                }
+                catch {
+                    
+                }
+                
+            }
+            task.resume()
+        }catch{
+        }
+    }
+
 
     
     

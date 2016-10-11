@@ -20,8 +20,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var locationManager: CLLocationManager!
     
     
-    var latitude:Double = -23.5629
-    var longitude:Double = -46.6544
+    var latitude:Double = -23.564359
+    var longitude:Double = -46.652628
     
     var scale:Double = 5
         
@@ -48,7 +48,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         
         map.delegate = self;
-        
+        //getList();
         
     }
 
@@ -104,6 +104,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         if self.userLocation != locations[0]{
         self.userLocation = locations[0]        
         
+           // getList();
+            
         pinMap(latitude, longitude: longitude)
         }
     }
@@ -152,6 +154,69 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBAction func abrirLista(sender: AnyObject) {
     }
+    
+    func getList(){
+        var lat:Bool = false
+        var long:Bool = false
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://11mob.890m.com/usuario.php/listar_todos")!)
+        request.HTTPMethod = "POST"
+        let json = ["latitude": 0.0, "longitude":0.0 ]
+        var semaphore = dispatch_semaphore_create(0)
+        do{
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
+            
+            
+            request.HTTPBody = jsonData
+            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+            
+            
+            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
+                guard error == nil && data != nil else {                                                                          print("error=\(error)")
+                    return
+                }
+                
+                do{
+                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                    
+                    if let resultado = json["result"] as? [[String: AnyObject]] {
+                        
+                        
+                        for lines in resultado {
+                            var latit:Double = 0.0
+                            var longit:Double = 0.0
+                            if let latitude = lines["latitude"] as? Double {
+                                lat = true
+                                latit = latitude
+                            }
+                            if let longitude = lines["longitude"] as? Double {
+                                long = true
+                                longit = longitude
+                            }
+                            
+                            if(lat && long){
+                            self.pinMap(latit, longitude: longit)
+                            }
+                        }
+                    }
+                    dispatch_semaphore_signal(semaphore)
+
+                    
+                }
+                catch {
+                    dispatch_semaphore_signal(semaphore)
+                }
+                
+            }
+            task.resume()
+        }catch{
+            dispatch_semaphore_signal(semaphore)
+
+        }
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        
+    }
+
+    
     /*
     // MARK: - Navigation
 
